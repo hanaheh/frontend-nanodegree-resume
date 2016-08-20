@@ -121,23 +121,26 @@ var projects = {
 
 projects.display = function() {
     $("#projects").append(HTMLprojectStart);
-    for (project in projects.projects) {
+    projects.projects.forEach(function(project){
 
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
         $(".project-entry:last").append(formattedTitle);
 
-        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
         $(".project-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedDescription);
 
-        if (projects.projects[project].images.length > 0){
-            for (images in projects.projects[project].images){
-                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[images]);
+        if (project.images.length > 0){
+            for(i=0 ; i<project.images.length ; i++){
+                var formattedImage = HTMLprojectImage.replace("%data%", project.images[i]);
                 $(".project-entry:last").append(formattedImage);
-            }
-        }
-    }
-}
+            };
+
+        };
+    });
+};
 projects.display();
+
+
