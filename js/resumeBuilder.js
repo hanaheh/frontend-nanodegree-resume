@@ -1,9 +1,7 @@
 var bio = {
     "name" : "Huayu Heh",
     "role" : "Front-End Developer",
-    "welcomeMassage" : "Welcome to see my resume",
-    "biopic" : "images/self_portrait.jpg",
-    "contain" : {
+    "contains" : {
         "mobile" : "415-999-0504",
         "email" : "hanaheh128@gmail.com",
         "github" : "hanaheh",
@@ -12,7 +10,9 @@ var bio = {
     },
     "skills" : [
         "HTML","CSS", "JavaScript","Highcharts JS", "Bootstrap", "Xcode", "Google map API"
-    ]
+    ],
+    "biopic" : "images/self_portrait.jpg",
+    "welcomeMassage" : "Welcome to see my resume"
 };
 
 
@@ -22,14 +22,14 @@ bio.display = function(){
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedName, formattedRole);
     //contacts
-    var formattedMobile = HTMLmobile.replace("%data%",bio.contain.mobile);
-    var linkEmail = '<a class="link" href="mailto:' + bio.contain.email + '">';
-    var formattedEmail = HTMLemail.replace("%data%",linkEmail + bio.contain.email + '</a>');
-    var linkGithub = '<a class="link" href="http://github.com/' + bio.contain.github + '" target="blank">';
-    var formattedGithub = HTMLgithub.replace("%data%",linkGithub + bio.contain.github + "</a>");
-    var linkWebsite = "<a class='link' href='http://" + bio.contain.website + "' target='blank'>";
-    var formattedWebsite = HTMLwebsite.replace("%data%",linkWebsite + bio.contain.website + "</a>");
-    var formattedLocation = HTMLlocation.replace("%data%",bio.contain.location);
+    var formattedMobile = HTMLmobile.replace("%data%",bio.contains.mobile);
+    var linkEmail = '<a class="link" href="mailto:' + bio.contains.email + '">';
+    var formattedEmail = HTMLemail.replace("%data%",linkEmail + bio.contains.email + '</a>');
+    var linkGithub = '<a class="link" href="http://github.com/' + bio.contains.github + '" target="blank">';
+    var formattedGithub = HTMLgithub.replace("%data%",linkGithub + bio.contains.github + "</a>");
+    var linkWebsite = "<a class='link' href='http://" + bio.contains.website + "' target='blank'>";
+    var formattedWebsite = HTMLwebsite.replace("%data%",linkWebsite + bio.contains.website + "</a>");
+    var formattedLocation = HTMLlocation.replace("%data%",bio.contains.location);
     $("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedWebsite, formattedLocation);
     // Picture and Welcome Msg
     var formattedPic = HTMLbioPic.replace("%data%",bio.biopic);
@@ -124,24 +124,24 @@ projects.display = function() {
 projects.display();
 
 var education = {
-    "school" : [
+    "schools" : [
         {
             "name" : "Acadamy of Art University",
-            "city" : "San Francisco, CA, US",
-            "major" : "Masters Fine Art",
-            "minor" : "Web design and new media",
-            "dates" : "Jun 2015 - Aug. 2017",
+            "location" : "San Francisco, CA, US",
+            "degree" : "Masters Fine Art",
+            "majors" : "Web design and new media, Illustration",
+            "dates" : "Jun 2015 - Aug. 2017, June 2011 - Aug. 2014",
             "url" : "http://www.academyart.edu/"
         },{
-            "name" : "Acadamy of Art University",
-            "city" : "San Francisco, CA, US",
-            "major" : "Masters Fine Artn",
-            "minor" : "Illustration",
-            "dates" : "June 2011 - Aug. 2014",
-            "url" : "http://www.academyart.edu/"
+            "name" : "National Central University",
+            "location" : "Taoyuan, Taiwan",
+            "degree" : "Bachelor of Administration",
+            "majors" : "Information Management",
+            "dates" : "Sept 2005 - June 2009",
+            "url" : "http://www.ncu.edu.tw/"
         }
     ],
-    "onlineCourse" : [
+    "onlineCourses" : [
         {
             "title" : "Fron-End Developer N",
             "school" : "Udacity",
@@ -151,5 +151,23 @@ var education = {
     ]
 };
 
+education.display = function() {
+    $("#education").append(HTMLschoolStart);
+    education.schools.forEach(function(school){
+        var formattedName = HTMLschoolName.replace("%data%", school.name);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        $(".education-entry:last").append( formattedName + formattedDegree);
 
+        var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+        $(".education-entry:last").append(formattedLocation);
+
+        var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
+        $(".education-entry:last").append(formattedDates);
+
+        var formattedMajors = HTMLschoolMajor.replace("%data%", school.majors);
+        $(".education-entry:last").append(formattedMajors);
+    });
+
+};
+education.display();
 
