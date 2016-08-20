@@ -78,3 +78,66 @@ work.display = function(){
     });
 }
 work.display();
+
+var projects = {
+    "projects" : [
+        {
+            "title": "Billbo",
+            "dates": "May 18th",
+            "description": "Web Page created using code for first time",
+            "images": [
+                "images/billbo-chart.jpg", "images/billbo-dish.jpg"
+            ]
+        },{
+            "title": "My Quiz",
+            "dates": "June 29th",
+            "description": "Disney quiz with Python",
+            "images": [
+                "images/billbo-chart.jpg", "images/billbo-dish.jpg"
+            ]
+        }
+    ]
+};
+
+var projects = {
+    "projects" : [
+        {
+            "title": "Shift Table",
+            "dates": "Nov. 2015 - Dec. 2015",
+            "description": "Run the best meeting time for a group meeting based on everyone’s calendar and show the meeting time on calendar and location on a Google map. Team project. Team leader and JavaScript developer. Selected into Tech Showcase on 1st WNM Ideate Conference.",
+            "images": [
+                "images/shift-table-function1.jpg", "images/shift-table-function2.jpg","images/shift-table-function3.jpg","images/shift-table-function4.jpg"
+            ]
+        },{
+            "title": "Billbo",
+            "dates": "Sep. 2015 - Dec. 2015",
+            "description": "Show the bill details with lists and pie chart and help user split their bills by number of people or by order dishes. Personal Project. Front-end developer and UI designer. Short at least half time for splitting bills.",
+            "images": [
+                "images/billbo-function1.jpg", "images/billbo-function2.jpg","images/billbo-function3.jpg","images/billbo-function4.jpg"
+            ]
+        }
+    ]
+};
+
+projects.display = function() {
+    $("#projects").append(HTMLprojectStart);
+    for (project in projects.projects) {
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
+
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
+
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedDescription);
+
+        if (projects.projects[project].images.length > 0){
+            for (images in projects.projects[project].images){
+                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[images]);
+                $(".project-entry:last").append(formattedImage);
+            }
+        }
+    }
+}
+projects.display();
