@@ -44,3 +44,37 @@ bio.display = function(){
     }
 };
 bio.display();
+
+var work = {
+    "jobs" : [
+        {
+            "employer" : "Jiangyun Educational Foundation",
+            "title" : "Freelance Graphic and Web Designer",
+            "location" : "Online",
+            "dates" : "June 2013 - Aug. 2013",
+            "description" :"Collaborated with directors to determine the idea for a logo, business card and website. Designed 3 different logo styles and layouts to present to the client. Communicated closely with clients and used feedback to create the final vision."
+        },{
+            "employer" : "Yuanlin Cheng, D.Litt.",
+            "title" : "Freelance Graphic Designer and Illustrator",
+            "location" : "Taipei, Taiwan",
+            "dates" : "June 2012 - Aug. 2012",
+            "description" :"Set type and layout for a textbook on teaching reading skills in Mandarin. Drew 15 black and white line-drawing illustrations based on articles. Created visual presentation with illustrations, infographics and photos. Brainstormed to design posters that publicized a Chinese reading project."
+        }
+    ]
+};
+
+work.display = function(){
+    work.jobs.forEach(function(job){
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+        var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
+        var formattedDate = HTMLworkDates.replace("%data%", job.dates);
+        var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+
+        var formattedEmployerAll = formattedEmployer + formattedTitle + formattedLocation + formattedDate + formattedDescription;
+        $(".work-entry:last").append(formattedEmployerAll);
+
+    });
+}
+work.display();
