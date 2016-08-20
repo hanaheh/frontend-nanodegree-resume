@@ -123,4 +123,33 @@ projects.display = function() {
 };
 projects.display();
 
+var education = {
+    "school" : [
+        {
+            "name" : "Acadamy of Art University",
+            "city" : "San Francisco, CA, US",
+            "major" : "Masters Fine Art",
+            "minor" : "Web design and new media",
+            "dates" : "Jun 2015 - Aug. 2017",
+            "url" : "http://www.academyart.edu/"
+        },{
+            "name" : "Acadamy of Art University",
+            "city" : "San Francisco, CA, US",
+            "major" : "Masters Fine Artn",
+            "minor" : "Illustration",
+            "dates" : "June 2011 - Aug. 2014",
+            "url" : "http://www.academyart.edu/"
+        }
+    ],
+    "onlineCourse" : [
+        {
+            "title" : "Fron-End Developer N",
+            "school" : "Udacity",
+            "dates" : "July 2016 - in progress",
+            "url" : "https://www.udacity.com/"
+        }
+    ]
+};
+
+
 
