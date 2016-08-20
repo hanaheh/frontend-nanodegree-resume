@@ -41,7 +41,7 @@ bio.display = function(){
     for(i = 0; i < bio.skills.length; i ++){
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#skills").append(formattedSkill);
-    }
+    };
 };
 bio.display();
 
@@ -78,26 +78,6 @@ work.display = function(){
     });
 }
 work.display();
-
-var projects = {
-    "projects" : [
-        {
-            "title": "Billbo",
-            "dates": "May 18th",
-            "description": "Web Page created using code for first time",
-            "images": [
-                "images/billbo-chart.jpg", "images/billbo-dish.jpg"
-            ]
-        },{
-            "title": "My Quiz",
-            "dates": "June 29th",
-            "description": "Disney quiz with Python",
-            "images": [
-                "images/billbo-chart.jpg", "images/billbo-dish.jpg"
-            ]
-        }
-    ]
-};
 
 var projects = {
     "projects" : [
