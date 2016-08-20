@@ -91,7 +91,11 @@ a {
   margin-top: 10px;
   display: block;
 }
-
+.link{
+  display: inline;
+  color:white;
+  text-decoration: underline;
+}
 .welcome-message {
   font-style: italic;
   font-size: 18px;
