@@ -1,12 +1,12 @@
 var bio = {
     "name" : "Huayu Heh",
     "role" : "Front-End Developer",
-    "contains" : {
+    "contacts" : {
         "mobile" : "415-999-0504",
         "email" : "hanaheh128@gmail.com",
         "github" : "hanaheh",
         "website" : "huayuheh.com",
-        "location" : "San Francisco"
+        "location" : "San Francisco, CA"
     },
     "skills" : [
         "HTML","CSS", "JavaScript","Highcharts JS", "Bootstrap", "Xcode", "Google map API"
@@ -22,14 +22,14 @@ bio.display = function(){
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedName, formattedRole);
     //contacts
-    var formattedMobile = HTMLmobile.replace("%data%",bio.contains.mobile);
-    var linkEmail = '<a class="link" href="mailto:' + bio.contains.email + '">';
-    var formattedEmail = HTMLemail.replace("%data%",linkEmail + bio.contains.email + '</a>');
-    var linkGithub = '<a class="link" href="http://github.com/' + bio.contains.github + '" target="blank">';
-    var formattedGithub = HTMLgithub.replace("%data%",linkGithub + bio.contains.github + "</a>");
-    var linkWebsite = "<a class='link' href='http://" + bio.contains.website + "' target='blank'>";
-    var formattedWebsite = HTMLwebsite.replace("%data%",linkWebsite + bio.contains.website + "</a>");
-    var formattedLocation = HTMLlocation.replace("%data%",bio.contains.location);
+    var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+    var linkEmail = '<a class="link" href="mailto:' + bio.contacts.email + '">';
+    var formattedEmail = HTMLemail.replace("%data%",linkEmail + bio.contacts.email + '</a>');
+    var linkGithub = '<a class="link" href="http://github.com/' + bio.contacts.github + '" target="blank">';
+    var formattedGithub = HTMLgithub.replace("%data%",linkGithub + bio.contacts.github + "</a>");
+    var linkWebsite = "<a class='link' href='http://" + bio.contacts.website + "' target='blank'>";
+    var formattedWebsite = HTMLwebsite.replace("%data%",linkWebsite + bio.contacts.website + "</a>");
+    var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
     $("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedWebsite, formattedLocation);
     // Picture and Welcome Msg
     var formattedPic = HTMLbioPic.replace("%data%",bio.biopic);
@@ -185,3 +185,4 @@ education.display = function() {
 };
 education.display();
 
+$("#mapDiv").append(googleMap);
