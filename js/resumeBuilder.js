@@ -50,7 +50,7 @@ var work = {
         {
             "employer" : "Jiangyun Educational Foundation",
             "title" : "Freelance Graphic and Web Designer",
-            "location" : "Online",
+            "location" : "San Francisco, CA",
             "dates" : "June 2013 - Aug. 2013",
             "description" :"Collaborated with directors to determine the idea for a logo, business card and website. Designed 3 different logo styles and layouts to present to the client. Communicated closely with clients and used feedback to create the final vision."
         },{
